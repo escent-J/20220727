@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #content {
+        width: 200px;
+        margin: 20px;
+      }
+      #content .page {
+        text-align: right;
+        margin: 5px;
+      }
+      #content .page button {
+        background-color: lightblue;
+        color: white;
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        border: none;
+        line-height: 1.5;
+      }
+      #content .pic {
+        width: 363px;
+        height: 496px;
+        border-image-outset: 3px solid blue;
+        overflow: hidden;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        var total = $(".pic > div").length; //4
+        var curr = 1; //현재 페이지 넘버
+        $(".pageInfo > span:first").text(curr);
+        $(".pageInfo > span:last").text(total);
+        $(".nextBtn").click(function () {
+          curr++;
+          if (curr > total) {
+            curr = 1;
+          }
+          $(".pageInfo > span:first").text(curr);
+          $(".pic div:first").insertAfter(".pic div:last");
+          //div 첫번째 요소를 div 마지막 요소에 삽입
+        });
+        $(".prevBtn").click(function () {
+          curr--;
+          if (curr < 1) {
+            curr = total;
+          }
+          $(".pageInfo > span:first").text(curr);
+          $(".pic div:last").insertBefore(".pic div:first");
+        });
+      });
+    </script>
+    <div id="content">
+      <div class="page">
+        <span class="pageInfo">
+          <span></span>/
+          <span></span>
+        </span>
+        <button class="prevBtn">&lt;이전</button>
+        <button class="nextBtn">&gt;다음</button>
+      </div>
+      <div class="pic">
+        <div><img src="./img/france에펠탑(노을).jpg" alt="1번째 사진" /></div>
+        <div><img src="./img/france몽마르뜨언덕.jpg" alt="2번째 사진" /></div>
+        <div><img src="./img/france뤽상부르공원.jpg" alt="3번째 사진" /></div>
+        <div><img src="./img/france파리전경.jpg" alt="4번째 사진" /></div>
+      </div>
+    </div>
+  </body>
+</html>

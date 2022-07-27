@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin: 20px;
+        padding: 40px;
+        background-color: lightgray;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $(".box1").mouseover(function () {
+          $(".result").append("<Strong>마우스오버</Strong>"); //해당 영역에 마우스가 올라가면
+        });
+        $(".box2").mouseenter(function () {
+          $(".result").append("<em>마우스엔터</em>"); //해당 영역에 들어가면
+        });
+      });
+    </script>
+    <div class="box1">마우스오버</div>
+    <div class="box2">마우스엔터</div>
+    <div class="result"></div>
+  </body>
+</html>

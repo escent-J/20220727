@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery CDN</title>
+    <style>
+      header,
+      div,
+      nav,
+      ul,
+      li,
+      footer {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="logo">로고</div>
+      <div class="search">검색하기</div>
+    </header>
+
+    <nav id="gnb">
+      <ul>
+        <li>
+          <ul>
+            <li>메뉴 1-1</li>
+            <li>메뉴 1-2</li>
+          </ul>
+        </li>
+        <li>메뉴2</li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div class="left">왼쪽</div>
+      <div class="left">오른쪽</div>
+    </div>
+    <footer id="footer">
+      회사소개<br />
+      개인정보처리방침
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".logo").css("border", "5px solid lightgreen");
+        $("#gnb").css("border", "1px solid red");
+        $("footer,.left,.right").css("border", "2px solid gray");
+      });
+    </script>
+  </body>
+</html>
